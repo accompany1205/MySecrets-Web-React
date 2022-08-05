@@ -816,8 +816,8 @@ const MessageIndex = (props) => {
                             </InputGroup>
                           </div>
 
-                          <div className="chat-post__actions">
-                            {/*<FormControl
+                          {/* <div className="chat-post__actions">
+                            <FormControl
                               id="fileupload_photo"
                               type="file"
                               multiple="multiple"
@@ -845,8 +845,8 @@ const MessageIndex = (props) => {
                                 src="/assets/images/icons/tip.svg"
                                 className="svg-clone"
                               />
-                            </Button>*/}
-                          </div>
+                            </Button>
+                          </div> */}
                         </div>
                       </div>
                     </Form>
