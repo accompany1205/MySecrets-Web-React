@@ -809,7 +809,7 @@ const MessageIndex = (props) => {
                                       }
                                       className="svg-clone"
                                     />
-                                    <span className="post-tip" style={{color:'#E85DBE'}}>{t("send_tip")}</span>
+                                    <span className="post-tip" style={{color:'#E85DBE'}}></span>
                                   </Button>
                                 </InputGroup.Text>
                               </InputGroup.Append>
