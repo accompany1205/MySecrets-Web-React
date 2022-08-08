@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import configuration from "react-global-configuration";
 import { Link } from "react-router-dom";
-import { Form, Container, Row, Col, Media } from "react-bootstrap";
+import { Form, Container, Row, Col, Media, Image } from "react-bootstrap";
 import { withNamespaces } from 'react-i18next';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
@@ -73,6 +73,13 @@ class MyComponent extends Component {
                                                 <Link to="page/help">
                                                     {t('help')}
                                                 </Link>
+                                            </Media>
+                                            <Media as="li" style={{color:'#8a96a3'}}>
+                                            <Image
+                                                src="/assets/images/icons/globe.svg"
+                                                className="svg-clone"
+                                            />
+                                                    {t('language')}
                                             </Media>
                                         </ul>
                                     </Col>
