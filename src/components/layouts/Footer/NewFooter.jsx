@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import configuration from "react-global-configuration";
 import { Link } from "react-router-dom";
-import { Form, Container, Row, Col, Media, Image } from "react-bootstrap";
+import { Form, Container, Row, Col, Media, Image, Dropdown, DropdownButton  } from "react-bootstrap";
 import { withNamespaces } from 'react-i18next';
-import Dropdown from 'react-bootstrap/Dropdown';
-import DropdownButton from 'react-bootstrap/DropdownButton';
+
+
+
 import i18n from '../../../i18n';
 class MyComponent extends Component {
 
@@ -26,27 +27,7 @@ class MyComponent extends Component {
                     <Container>
                         <div className="footer-sec">
                             <Row>
-                                <div className="dropdown-language resp-mrg-btn-xs col-md-12 col-lg-12" style={{display:"flex", justifyContent:"center" }}>
-                                    <div style={{paddingRight:'5px'}}>
-                                        <button style={{ width:'100px', backgroundColor:'#E85DBE'}} onClick={() => changeLanguage('en')}>{t("english")}</button>    
-                                    </div>
-                                    <div style={{paddingLeft:'5px'}}>
-                                        <button style={{ width:'100px', backgroundColor:'#E85DBE'}} onClick={() => changeLanguage('sp')}>{t("spanish")}</button>
-                                    </div>
-                                    
-
-                                    {/* <Dropdown>
-                                        <Dropdown.Toggle variant="secondary" id="dropdown-basic">
-                                            {t("language")}
-                                        </Dropdown.Toggle>
-
-                                        <Dropdown.Menu>
-                                            <Dropdown.Item onClick={() => changeLanguage('en')}>{t("english")}</Dropdown.Item>
-                                            <Dropdown.Item onClick={() => changeLanguage('sp')}>{t("spanish")}</Dropdown.Item>
-                                        </Dropdown.Menu>
-                                    </Dropdown> */}
-                                </div>
-                                <div className="resp-col-width resp-mrg-btn-xs col-md-12 col-lg-5">
+                                <div className="resp-col-width resp-mrg-btn-xs" style={{marginTop:'15px'}}>
                                     <Col className="resp-col-width">
                                         <ul className="footer-link-sec list-unstyled" >
                                             <Media as="li">
@@ -79,19 +60,28 @@ class MyComponent extends Component {
                                                 src="/assets/images/icons/globe.svg"
                                                 className="svg-clone"
                                             />
-                                                    {t('language')}
+                                            <div className="dropup" style={{paddingLeft:'0px'}}>
+                                                <p className="dropbtn">{t('language')}</p>
+                                                <div className="dropup-content">
+                                                    <a type="button" onClick={() => changeLanguage('en')}>{t('english')}</a>
+                                                    <a type="button" onClick={() => changeLanguage('sp')}>{t('spanish')}</a>
+                                                </div>
+                                            </div>
                                             </Media>
+                                            
                                         </ul>
                                     </Col>
                                 </div>
-                                <div className="col-md-12 col-lg-5">
+                                <div className="resp-col-width resp-mrg-btn-xs">
+                                <ul className="footer-link-sec list-unstyled" >
                                     <div className="copyrights">
                                         <h4>
                                             {t("copyrights")} <strong style={{ "color": "#e85dbe" }}>{t("mysecrets")}</strong> {this.state.year}. All rights reserved.
                                         </h4>
                                     </div>
+                                </ul>
                                 </div>
-                                <div className="resp-col-width resp-mrg-btn-xs col-md-12 col-lg-2">
+                                <div className="resp-col-width resp-mrg-btn-xs">
                                     <ul className="footer-social-link-sec list-unstyled">
                                         <Media as="li" >
                                             <a href={configuration.get("configData.facebook_link")} target="_blank">
@@ -117,6 +107,8 @@ class MyComponent extends Component {
 
                                     <h4>@{t("mysecrets")} </h4>
                                 </div>
+                                
+                                
 
                             </Row>
                         </div>

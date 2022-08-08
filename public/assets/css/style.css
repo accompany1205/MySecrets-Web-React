@@ -591,7 +591,7 @@ p.login-tagline {
   margin-bottom: 12px !important;
   border-radius: 1000px;
   margin-bottom: 20px;
-  background: var(--primary-color);
+  background: #E85DBE;
   background-position: 25px 0px;
   box-sizing: border-box;
   color: var(--secondary-color);
@@ -623,6 +623,37 @@ storiesWrapper {
   margin: 0 6px;
   vertical-align: top;
 }
+
+.dropbtn {
+}
+
+.dropup {
+  position: relative;
+  display: inline-block;
+}
+
+.dropup-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 100px;
+  bottom: 35px;
+  z-index: 1;
+}
+
+.dropup-content a {
+  display: block;
+}
+
+.dropup-content a:hover {background-color: #ccc}
+
+.dropup:hover .dropup-content {
+  display: block;
+}
+
+.dropup:hover .dropbtn {
+}
+
 .stories.carousel .story:first-child {
   height: 128px;
   border-radius: 10px;
@@ -1917,7 +1948,7 @@ button.custom-btn {
 .gallery-top-btn-sec .subscribe-post-btn-sec:hover,
 .gallery-top-btn-sec .subscribe-post-btn-sec:focus,
 .gallery-top-btn-sec .subscribe-post-btn-sec:active{
-  background-color: var(--primary-color)!important;
+  background-color: #E683C8 !important;
   color: var(--secondary-color)!important;
 }
 
