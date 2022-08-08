@@ -50,8 +50,8 @@ const LiveStreamCreate = (props) => {
                 </div>
                 <div className="pull-right">
                   <Button
+                    style={{color:'#E85DBE'}}
                     type="submit"
-                    style={fontstyle}
                     className="post-btn btn-primary"
                     onClick={handleSubmit}
                   >

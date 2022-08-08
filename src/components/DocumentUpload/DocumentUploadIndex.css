@@ -58,7 +58,7 @@
     font-size: 13px!important;
     color: var(--secondary-color)!important;
     font-weight: 500!important;
-    background: var(--primary-color)!important;
+    background: #E85DBE !important;
     border-radius: 1000px!important;
     -webkit-transition: opacity .15s ease,background-color .15s ease,-webkit-box-shadow .15s ease;
     transition: opacity .15s ease,background-color .15s ease,-webkit-box-shadow .15s ease;
@@ -71,7 +71,7 @@
 }
 
 .receive-btn-blue:hover{
-    background: var(--primary-color)!important; 
+    background: #E85DBE!important; 
     color: var(--secondary-color)!important;
 }
 
