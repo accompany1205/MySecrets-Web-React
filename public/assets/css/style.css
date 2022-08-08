@@ -1095,12 +1095,13 @@ p#two {
   font-weight: 500;
   padding: 9px 16px;
   min-height: 48px;
-  background: var(--primary-color) !important;
+  background: #E85DBE !important;
   border-radius: 1000px;
   width: 100%;
   color: var(--secondary-color);
   font-size: 14px;
   color: #fefefe;
+  border-color: #E85DBE;
 }
 p#one {
   float: right;
@@ -1115,7 +1116,8 @@ p#one {
 .btn.btn-auth:focus,
 .btn.btn-auth:active{
   color: var(--secondary-color) !important;
-  background: var(--primary-color) !important;
+  background: #E85DBE !important;
+  border-color: #E85DBE;
 }
 /*.form-group.check-box input[type="checkbox"] {
     position: relative;
@@ -1903,7 +1905,7 @@ button.custom-btn {
 }
 
 .gallery-top-btn-sec .subscribe-post-btn-sec {
-  background-color: var(--primary-color)!important;
+  background-color: #E683C8 !important;
   color: var(--secondary-color)!important;
   border: none!important;
   border-radius: 1000px!important;
@@ -4704,8 +4706,8 @@ span.new-user-name:after {
 }
 
 .post-btn {
-  background: var(--primary-color) !important;
-  border-color: var(--primary-color) !important ;
+  background: #E85DBE !important;
+  border-color: #cd1d98 !important ;
   min-width: 72px !important;
   /* pointer-events: none; */
   border-radius: 1000px !important;
@@ -4729,8 +4731,8 @@ span.new-user-name:after {
 .post-btn.btn-primary:hover,
 .post-btn.btn-primary:focus,
 .post-btn.btn-primary:active {
-  background: var(--primary-color) !important;
-  border-color: var(--primary-color) !important ;
+  background: #E85DBE !important;
+  border-color: #cd1d98 !important ;
 }
 .post-create-header {
   display: block;
@@ -5740,7 +5742,7 @@ input#edit-login {
   font-size: 14px !important;
   color: #fefefe;
   font-weight: 500 !important;
-  background: var(--primary-color) !important;
+  background: #E85DBE !important;
   min-width: 78px;
   border-radius: 1000px !important;
   -webkit-transition: opacity 0.15s ease, background-color 0.15s ease,
@@ -5759,7 +5761,7 @@ input#edit-login {
 
 .save-btn.btn-primary:hover,
 .save-btn.btn-primary:focus {
-  background: var(--primary-color) !important;
+  background: #E85DBE !important;
 }
 span.edit-new-username-status {
   position: absolute;

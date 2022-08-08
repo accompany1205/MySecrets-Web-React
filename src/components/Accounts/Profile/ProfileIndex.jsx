@@ -116,6 +116,7 @@ const ProfileIndex = (props) => {
                       <a
                         href={"/edit-profile"}
                         className="g-btn m-rounded m-border m-uppercase m-flex m-fluid-width m-profile btn-profile"
+                        style={{color:"#E85DBE"}}
                       >
                         <Image
                           src="/assets/images/icons/settings.svg"

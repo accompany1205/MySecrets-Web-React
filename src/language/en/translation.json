@@ -348,5 +348,7 @@
   "please_connect_your_bank_details_in_stripe":"Please connect your bank details in stripe",
   "connect_with_stripe" : "Connect with Stripe",
   "document_upload": "You can’t subscribe premium accounts or post something until you pass document verification. Face Authentication Required Click here",
-  "face_authentication" : "Face Authentication"
+  "face_authentication" : "Face Authentication",
+  "earnings" : "Earnings",
+  "withdraws" : "Withdraws"
 }

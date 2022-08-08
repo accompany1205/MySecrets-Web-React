@@ -150,7 +150,7 @@
 }
 
 .payment-tabs-card .nav-tabs .nav-link.active {
-    background-color: var(--primary-color);
+    background-color: #E85DBE;
     color: var(--secondary-color);
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
@@ -236,7 +236,7 @@
     text-align: center;
     font-size: 14px;
     font-weight: 400;
-    background: var(--primary-color);
+    background: #E85DBE;
     /* min-width: 78px; */
     -webkit-box-pack: start;
     -ms-flex-pack: start;
@@ -250,7 +250,7 @@
 .payment-sec .send-withdraw-btn:hover,
 .payment-sec .send-withdraw-btn:focus,
 .payment-sec .send-withdraw-btn:active{
-    background: var(--primary-color)!important;
+    background: #E85DBE !important;
     color: var(--secondary-color)!important;
 }
 

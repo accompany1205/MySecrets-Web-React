@@ -156,8 +156,8 @@ const PaymentsIndex = (props) => {
                   {t("send_withdraw")}
                 </Button>
               </div>
-              <Tabs defaultActiveKey="earnings" id="uncontrolled-tab-example">
-                <Tab eventKey="earnings" title="Earnings">
+              <Tabs defaultActiveKey="earnings"  id="uncontrolled-tab-example">
+                <Tab eventKey="earnings" title={t("earnings")}>
                   <div className="payment-tabs-content">
                     {props.transaction.loading ? (
                       t("loading")
@@ -199,7 +199,7 @@ const PaymentsIndex = (props) => {
                   </div>
                 </Tab>
 
-                <Tab eventKey="payments" title="Withdraws">
+                <Tab eventKey="payments" title={t('withdraws')}>
                   <div className="payment-tabs-content">
                     {props.withDrawals.loading ? (
                       t("loading")

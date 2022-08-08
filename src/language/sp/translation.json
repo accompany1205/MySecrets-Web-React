@@ -349,5 +349,7 @@
   "account_connected":"Cuenta conectada",
   "connect_with_stripe" : "Conéctate con Stripe",
   "document_upload": "No puede suscribirse a cuentas premium o publicar algo hasta que pase la verificación del documento. Se requiere autenticación facial Haga clic aquí",
-  "face_authentication" : "Autenticación facial"
+  "face_authentication" : "Autenticación facial",
+  "earnings" : "Ganancias",
+  "withdraws" : "Retirar"
 }
