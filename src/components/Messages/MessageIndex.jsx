@@ -376,7 +376,7 @@ const MessageIndex = (props) => {
         } else {
           messages = [...chatData];
         }
-        console.log(messages)
+        console.log('******************************************', messages)
 
         setInputMessage("");
         props.dispatch(addMessageContent(chatData));

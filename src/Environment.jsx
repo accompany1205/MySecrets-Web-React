@@ -3,6 +3,9 @@ import { apiConstants } from "./components/Constant/constants";
 const apiUrl = "https://admin.mysecrets.com/api/user/"; // Production Mode
 const serverUrl = "https://admin.mysecrets.com";
 
+// const apiUrl = "http://localhost:8000/api/user/"; // Production Mode
+// const serverUrl = "http://localhost:8000";
+
 const Environment = {
   postMethod: async (action, object) => {
     let userId =

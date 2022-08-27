@@ -23,19 +23,23 @@ let chatSocket;
 
 
 const HeaderIndex = (props) => {
+ 
   const [chatCount, setChatCount] = useState(0);
   const [bellCount, setBellCount] = useState(0);
+  
 
   useEffect(() => {
-    console.log('Inside');
     let chatSocketUrl = configuration.get("configData.chat_socket_url");
     if (chatSocketUrl === "") {
+      
       console.log('no keys configured');
     }
-    if (configuration.get("configData.is_notification_count_enabled") == 1) {
+    if (configuration.get("configData.is_notification_count_enabled") == 0) {
+      
       chatSocketConnect();
     }
     if (localStorage.getItem("userId")) {
+      console.log("1***************",configuration.get("configData.is_notification_count_enabled"))
       props.dispatch(fetchUserDetailsStart());
     }
     setInterval(() => {
@@ -48,6 +52,9 @@ const HeaderIndex = (props) => {
   const chatSocketConnect = () => {
     // check the socket url is configured
     let chatSocketUrl = configuration.get("configData.chat_socket_url");
+    
+    
+
     if (chatSocketUrl) {
       chatSocket = io(chatSocketUrl, {
         query:
@@ -63,8 +70,10 @@ const HeaderIndex = (props) => {
         myid: localStorage.getItem("userId"),
       });
       if (localStorage.getItem("socket") == "true") {
+        
         chatSocket.on("notification", (newData) => {
-          console.log(newData);
+          console.log(" configuration ***&KJJ => ", configuration.get("configData.chat_socket_url"));
+          console.log("hi*****************************KJJ", newData);
           setChatCount(newData.chat_notification);
           setBellCount(newData.bell_notification);
         });
@@ -101,6 +110,8 @@ const HeaderIndex = (props) => {
   const wrapperRef = useRef(null);
   useOutsideAlerter(wrapperRef);
 
+  console.log("KJJ-Bellnotification => ", bellCount)
+
   const { t } = props;
   return (
     <>
@@ -120,8 +131,8 @@ const HeaderIndex = (props) => {
               <Link
                 to={"/notification"}
                 className="main-header-menu icon-with-round-hover"
-                active-className="m-current"
-                exact-active-className=""
+                active-classname="m-current"
+                exact-active-classname=""
                 onClick={() => setIsVisible(false)}
               >
                 <Image
@@ -130,11 +141,8 @@ const HeaderIndex = (props) => {
                     "/assets/images/icons/notification.svg"
                   }
                 />
-                {/* {bellCount > 0 ?
-                  <Badge variant="light" className="badge-notify">{bellCount}</Badge>
-                : ""} */}
-                {bellCount + (props.profile.data.bell_notification) > 0 ?
-                  <Badge variant="light" className="badge-notify">{bellCount + (props.profile.data.bell_notification)}</Badge>
+                {(props.profile.data.bell_notification) > 0 ?
+                  <Badge variant="light" className="badge-notify">{(props.profile.data.bell_notification)}</Badge>
                   :
                   ""
                 }
@@ -187,10 +195,11 @@ const HeaderIndex = (props) => {
                 <Image
                   src={window.location.origin + "/assets/images/icons/chat.svg"}
                 />
-                {/* <span className="main-header-menu__count"> 5 </span>  */}
-                {chatCount > 0 ?
-                  <Badge variant="light" className="badge-notify">{chatCount}</Badge>
-                  : ""}
+                  {props.profile.data.chat_notification > 0 ?
+                  <Badge variant="light" className="badge-notify">{props.profile.data.chat_notification}</Badge>
+                  :
+                  ""
+                }
               </Link>
 
               <Button
@@ -207,15 +216,6 @@ const HeaderIndex = (props) => {
                 />
               </Button>
             </nav>
-
-            {/* {localStorage.getItem("is_document_verified") == 3 ? (
-                  <div className="pl-2">
-                    <Alert key={1} variant='danger'>
-                      The user updated documents decined by Admin.
-                    </Alert>
-                  </div>
-                ) : null} */}
-
           </Container>
         </header>
       ) : (

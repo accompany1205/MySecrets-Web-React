@@ -8,14 +8,17 @@ import "react-redux-notify/dist/ReactReduxNotify.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { withNamespaces  } from "react-i18next";
 
+import {HelmetProvider, Helmet} from 'react-helmet-async';
+
 import "./i18n";
 
 const history = createHistory();
 function App ({ t }) {
     return (
+      
       <Provider store={store}>
         <Router history={history}>
-          <Base />
+            <Base />
         </Router>
       </Provider> 
     );
