@@ -70,6 +70,7 @@ import { t } from "react-multi-lang";
 function* getUserDetailsAPI() {
   try {
     const response = yield api.postMethod("profile");
+    console.log("asdfasdf", response.data)
 
     if (response.data.success) {
       yield put(fetchUserDetailsSuccess(response.data));

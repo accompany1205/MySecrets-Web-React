@@ -109,7 +109,7 @@ const HomePageIndex = (props) => {
                   placeholder="Search"
                   onChange={handleSearch}
                 />
-                <Link className="search-btn">
+                <Link className="search-btn" to="#">
                   <i className="fas fa-search"></i>
                 </Link>
               </Form>
