@@ -117,7 +117,7 @@ const UploadMediaModal = (props) => {
           <Form onSubmit={handleSubmit}>
             <Modal.Header closeButton>
               <Modal.Title>{t("upload_media")}</Modal.Title>
-             {btn? '' : <span className="upload-alert-msg">*File size lessthan 2MB only allowed</span>} 
+             {/* {btn? '' : <span className="upload-alert-msg">*File size lessthan 2MB only allowed</span>}  */}
             </Modal.Header>
             <Modal.Body>
               <FormControl
@@ -164,7 +164,7 @@ const UploadMediaModal = (props) => {
               >
                 {t("cancel")}
               </Button>
-              {btn ?
+              {/* {btn ? */}
               <Button
                 type="button"
                 className="btn btn-success"
@@ -173,7 +173,7 @@ const UploadMediaModal = (props) => {
               >
                 {t("send")}
               </Button>
-              : ''}
+              {/* : ''} */}
             </Modal.Footer>
           </Form>
         ) : null}

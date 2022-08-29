@@ -157,7 +157,7 @@ const PostDisplayCard = (props) => {
                     post.user.picture
                       ? api.serviceUrl() + "/" + post.user.picture
                       : api.serviceUrl() +
-                      "/images/mysecrets_avatar_square_image.png"
+                        "/images/mysecrets_avatar_square_image.png"
                   }
                   className="user-image img-responsive"
                 />
@@ -262,7 +262,7 @@ const PostDisplayCard = (props) => {
                 </span>
                 {post.is_user_needs_pay === 1 ? (
                   post.payment_info.post_payment_type === "ppv" &&
-                    localStorage.getItem("user_wallet_remaining") >=
+                  localStorage.getItem("user_wallet_remaining") >=
                     post.amount ? (
                     <span
                       className="post-time"
@@ -312,225 +312,225 @@ const PostDisplayCard = (props) => {
             {post.postFiles
               ? post.postFiles.length > 0
                 ? post.postFiles.map((postFile, index) =>
-                  postFile.file_type === "image" ? (
-                    <Link
-                      to="#"
-                      key={index}
-                      onClick={(event) =>
-                        post.payment_info.post_payment_type === "ppv" &&
+                    postFile.file_type === "image" ? (
+                      <Link
+                        to="#"
+                        key={index}
+                        onClick={(event) =>
+                          post.payment_info.post_payment_type === "ppv" &&
                           post.payment_info.is_user_needs_pay === 1 &&
                           localStorage.getItem("user_wallet_remaining") >=
-                          post.amount
-                          ? handlePPVPayment(
-                            event,
-                            post.payment_info.is_user_needs_pay
-                          )
-                          : handleImagePreview(
-                            event,
-                            1,
-                            post.payment_info.is_user_needs_pay
-                          )
-                      }
-                    >
-                      <div className="post-image" key={index}>
+                            post.amount
+                            ? handlePPVPayment(
+                                event,
+                                post.payment_info.is_user_needs_pay
+                              )
+                            : handleImagePreview(
+                                event,
+                                1,
+                                post.payment_info.is_user_needs_pay
+                              )
+                        }
+                      >
+                        <div className="post-image" key={index}>
+                          <div className="">
+                            <div className="gallery js-gallery">
+                              {post.payment_info.is_user_needs_pay == 1 ? (
+                                <Image
+                                  src={
+                                    api.serviceUrl() + "/" + postFile.post_file
+                                  }
+                                  className="post-view-image"
+                                />
+                              ) : (
+                                <Image
+                                  src={
+                                    api.serviceUrl() + "/" + postFile.post_file
+                                  }
+                                  className="post-view-image"
+                                  onClick={(event) =>
+                                    handleImagePreview(event, 1)
+                                  }
+                                />
+                              )}
+                            </div>
+                            {post.payment_info.is_user_needs_pay === 1 &&
+                            post.payment_info.post_payment_type === "ppv" &&
+                            localStorage.getItem("user_wallet_remaining") >=
+                              post.amount ? (
+                              <div className="gallery-top-btn-sec">
+                                <Button
+                                  className="subscribe-post-btn-sec-post"
+                                  onClick={(event) =>
+                                    handlePPVPayment(event, 1)
+                                  }
+                                >
+                                  {post.payment_info.payment_text}
+                                </Button>
+                              </div>
+                            ) : post.payment_info.is_user_needs_pay === 1 &&
+                              post.payment_info.post_payment_type === "ppv" &&
+                              localStorage.getItem("user_wallet_remaining") <
+                                post.amount ? (
+                              <div className="gallery-top-btn-sec">
+                                <Button
+                                  className="subscribe-post-btn-sec"
+                                  onClick={(event) => handleWalletAlert(event)}
+                                >
+                                  {post.payment_info.payment_text}
+                                </Button>
+                              </div>
+                            ) : (
+                              ""
+                            )}
+                            {post.payment_info.is_user_needs_pay === 1 &&
+                            post.payment_info.post_payment_type ===
+                              "subscription" &&
+                            localStorage.getItem("user_wallet_remaining") >=
+                              post.amount ? (
+                              <div className="gallery-top-btn-sec">
+                                <Button
+                                  className="subscribe-post-btn-sec"
+                                  onClick={(event) =>
+                                    handlePPVPayment(event, 1)
+                                  }
+                                >
+                                  {post.payment_info.payment_text}
+                                </Button>
+                              </div>
+                            ) : post.payment_info.is_user_needs_pay === 1 &&
+                              post.payment_info.post_payment_type ===
+                                "subscription" &&
+                              localStorage.getItem("user_wallet_remaining") <
+                                post.amount ? (
+                              <div className="gallery-top-btn-sec">
+                                <Button
+                                  className="subscribe-post-btn-sec"
+                                  onClick={(event) => handleWalletAlert(event)}
+                                >
+                                  {post.payment_info.payment_text}
+                                </Button>
+                              </div>
+                            ) : (
+                              ""
+                            )}
+                          </div>
+                          {modalStatus ? (
+                            <Lightbox
+                              mainSrc={
+                                api.serviceUrl() + "/" + postFile.post_file
+                              }
+                              // nextSrc={images[(photoIndex + 1) % images.length]}
+                              // prevSrc={images[(photoIndex + images.length - 1) % images.length]}
+                              onCloseRequest={() => setModalStatus(0)}
+                            />
+                          ) : (
+                            ""
+                          )}
+                        </div>
+                      </Link>
+                    ) : postFile.file_type === "video" ? (
+                      <div className="post-image post-video" key={index}>
                         <div className="">
                           <div className="gallery js-gallery">
                             {post.payment_info.is_user_needs_pay == 1 ? (
-                              <Image
-                                src={
-                                  api.serviceUrl() + "/" + postFile.post_file
-                                }
-                                className="post-view-image"
-                              />
+                              <div className="gallery-img-sec">
+                                <Image
+                                  src={
+                                    postFile.preview_file
+                                      ? api.serviceUrl() +
+                                        "/" +
+                                        postFile.preview_file
+                                      : api.serviceUrl() +
+                                        "/" +
+                                        postFile.post_file
+                                  }
+                                  className="post-view-image"
+                                />
+                                <div className="gallery-play-icon"></div>
+                              </div>
                             ) : (
-                              <Image
-                                src={
+                              <ReactPlayer
+                                light={
+                                  api.serviceUrl() + "/" + postFile.preview_file
+                                }
+                                url={
                                   api.serviceUrl() + "/" + postFile.post_file
                                 }
-                                className="post-view-image"
-                                onClick={(event) =>
-                                  handleImagePreview(event, 1)
-                                }
+                                controls={true}
+                                width="100%"
+                                height="100%"
+                                className="post-video-size"
+                                playing="play"
                               />
                             )}
+                            {post.payment_info.is_user_needs_pay === 1 &&
+                            post.payment_info.post_payment_type === "ppv" &&
+                            localStorage.getItem("user_wallet_remaining") >=
+                              post.amount ? (
+                              <div className="gallery-top-btn-sec">
+                                <Button
+                                  className="subscribe-post-btn-sec"
+                                  onClick={(event) =>
+                                    handlePPVPayment(event, 1)
+                                  }
+                                >
+                                  {post.payment_info.payment_text}
+                                </Button>
+                              </div>
+                            ) : post.payment_info.is_user_needs_pay === 1 &&
+                              post.payment_info.post_payment_type === "ppv" &&
+                              localStorage.getItem("user_wallet_remaining") <
+                                post.amount ? (
+                              <div className="gallery-top-btn-sec">
+                                <Button
+                                  className="subscribe-post-btn-sec"
+                                  onClick={(event) => handleWalletAlert(event)}
+                                >
+                                  {post.payment_info.payment_text}
+                                </Button>
+                              </div>
+                            ) : (
+                              ""
+                            )}
+                            {post.payment_info.is_user_needs_pay === 1 &&
+                            post.payment_info.post_payment_type ===
+                              "subscription" &&
+                            localStorage.getItem("user_wallet_remaining") >=
+                              post.amount ? (
+                              <div className="gallery-top-btn-sec">
+                                <Button
+                                  className="subscribe-post-btn-sec"
+                                  onClick={(event) =>
+                                    handlePPVPayment(event, 1)
+                                  }
+                                >
+                                  {post.payment_info.payment_text}
+                                </Button>
+                              </div>
+                            ) : post.payment_info.is_user_needs_pay === 1 &&
+                              post.payment_info.post_payment_type ===
+                                "subscription" &&
+                              localStorage.getItem("user_wallet_remaining") <
+                                post.amount ? (
+                              <div className="gallery-top-btn-sec">
+                                <Button
+                                  className="subscribe-post-btn-sec"
+                                  onClick={(event) => handleWalletAlert(event)}
+                                >
+                                  {post.payment_info.payment_text}
+                                </Button>
+                              </div>
+                            ) : (
+                              ""
+                            )}
                           </div>
-                          {post.payment_info.is_user_needs_pay === 1 &&
-                            post.payment_info.post_payment_type === "ppv" &&
-                            localStorage.getItem("user_wallet_remaining") >=
-                            post.amount ? (
-                            <div className="gallery-top-btn-sec">
-                              <Button 
-                                className="subscribe-post-btn-sec"
-                                onClick={(event) =>
-                                  handlePPVPayment(event, 1)
-                                }
-                              >
-                                {post.payment_info.payment_text}
-                              </Button>
-                            </div>
-                          ) : post.payment_info.is_user_needs_pay === 1 &&
-                            post.payment_info.post_payment_type === "ppv" &&
-                            localStorage.getItem("user_wallet_remaining") <
-                            post.amount ? (
-                            <div className="gallery-top-btn-sec">
-                              <Button
-                                className="subscribe-post-btn-sec"
-                                onClick={(event) => handleWalletAlert(event)}
-                              >
-                                {post.payment_info.payment_text}
-                              </Button>
-                            </div>
-                          ) : (
-                            ""
-                          )}
-                          {post.payment_info.is_user_needs_pay === 1 &&
-                            post.payment_info.post_payment_type ===
-                            "subscription" &&
-                            localStorage.getItem("user_wallet_remaining") >=
-                            post.amount ? (
-                            <div className="gallery-top-btn-sec">
-                              <Button
-                                className="subscribe-post-btn-sec"
-                                onClick={(event) =>
-                                  handlePPVPayment(event, 1)
-                                }
-                              >
-                                {post.payment_info.payment_text}
-                              </Button>
-                            </div>
-                          ) : post.payment_info.is_user_needs_pay === 1 &&
-                            post.payment_info.post_payment_type ===
-                            "subscription" &&
-                            localStorage.getItem("user_wallet_remaining") <
-                            post.amount ? (
-                            <div className="gallery-top-btn-sec">
-                              <Button
-                                className="subscribe-post-btn-sec"
-                                onClick={(event) => handleWalletAlert(event)}
-                              >
-                                {post.payment_info.payment_text}
-                              </Button>
-                            </div>
-                          ) : (
-                            ""
-                          )}
-                        </div>
-                        {modalStatus ? (
-                          <Lightbox
-                            mainSrc={
-                              api.serviceUrl() + "/" + postFile.post_file
-                            }
-                            // nextSrc={images[(photoIndex + 1) % images.length]}
-                            // prevSrc={images[(photoIndex + images.length - 1) % images.length]}
-                            onCloseRequest={() => setModalStatus(0)}
-                          />
-                        ) : (
-                          ""
-                        )}
-                      </div>
-                    </Link>
-                  ) : postFile.file_type === "video" ? (
-                    <div className="post-image post-video" key={index}>
-                      <div className="">
-                        <div className="gallery js-gallery">
-                          {post.payment_info.is_user_needs_pay == 1 ? (
-                            <div className="gallery-img-sec">
-                              <Image
-                                src={
-                                  postFile.preview_file
-                                    ? api.serviceUrl() +
-                                    "/" +
-                                    postFile.preview_file
-                                    : api.serviceUrl() +
-                                    "/" +
-                                    postFile.post_file
-                                }
-                                className="post-view-image"
-                              />
-                              <div className="gallery-play-icon"></div>
-                            </div>
-                          ) : (
-                            <ReactPlayer
-                              light={
-                                api.serviceUrl() + "/" + postFile.preview_file
-                              }
-                              url={
-                                api.serviceUrl() + "/" + postFile.post_file
-                              }
-                              controls={true}
-                              width="100%"
-                              height="100%"
-                              className="post-video-size"
-                              playing="play"
-                            />
-                          )}
-                          {post.payment_info.is_user_needs_pay === 1 &&
-                            post.payment_info.post_payment_type === "ppv" &&
-                            localStorage.getItem("user_wallet_remaining") >=
-                            post.amount ? (
-                            <div className="gallery-top-btn-sec">
-                              <Button
-                                className="subscribe-post-btn-sec"
-                                onClick={(event) =>
-                                  handlePPVPayment(event, 1)
-                                }
-                              >
-                                {post.payment_info.payment_text}
-                              </Button>
-                            </div>
-                          ) : post.payment_info.is_user_needs_pay === 1 &&
-                            post.payment_info.post_payment_type === "ppv" &&
-                            localStorage.getItem("user_wallet_remaining") <
-                            post.amount ? (
-                            <div className="gallery-top-btn-sec">
-                              <Button
-                                className="subscribe-post-btn-sec"
-                                onClick={(event) => handleWalletAlert(event)}
-                              >
-                                {post.payment_info.payment_text}
-                              </Button>
-                            </div>
-                          ) : (
-                            ""
-                          )}
-                          {post.payment_info.is_user_needs_pay === 1 &&
-                            post.payment_info.post_payment_type ===
-                            "subscription" &&
-                            localStorage.getItem("user_wallet_remaining") >=
-                            post.amount ? (
-                            <div className="gallery-top-btn-sec">
-                              <Button
-                                className="subscribe-post-btn-sec"
-                                onClick={(event) =>
-                                  handlePPVPayment(event, 1)
-                                }
-                              >
-                                {post.payment_info.payment_text}
-                              </Button>
-                            </div>
-                          ) : post.payment_info.is_user_needs_pay === 1 &&
-                            post.payment_info.post_payment_type ===
-                            "subscription" &&
-                            localStorage.getItem("user_wallet_remaining") <
-                            post.amount ? (
-                            <div className="gallery-top-btn-sec">
-                              <Button
-                                className="subscribe-post-btn-sec"
-                                onClick={(event) => handleWalletAlert(event)}
-                              >
-                                {post.payment_info.payment_text}
-                              </Button>
-                            </div>
-                          ) : (
-                            ""
-                          )}
                         </div>
                       </div>
-                    </div>
-                  ) : (
-                    ""
+                    ) : (
+                      ""
+                    )
                   )
-                )
                 : null
               : null}
           </div>
@@ -717,7 +717,7 @@ const PostDisplayCard = (props) => {
                 {props.comments.loading
                   ? t("loading")
                   : props.comments.data.post_comments.length > 0
-                    ? props.comments.data.post_comments.map((comment, index) => (
+                  ? props.comments.data.post_comments.map((comment, index) => (
                       <div className="row comment-row" key={index}>
                         <div className="alignleft">
                           <Link
@@ -728,10 +728,10 @@ const PostDisplayCard = (props) => {
                               src={
                                 comment.user_picture
                                   ? api.serviceUrl() +
-                                  "/" +
-                                  comment.user_picture
+                                    "/" +
+                                    comment.user_picture
                                   : api.serviceUrl() +
-                                  "/images/mysecrets_avatar_square_image.png"
+                                    "/images/mysecrets_avatar_square_image.png"
                               }
                               className="user-image img-responsive"
                             />
@@ -768,7 +768,7 @@ const PostDisplayCard = (props) => {
                         </div>
                       </div>
                     ))
-                    : ""}
+                  : ""}
 
                 <div className="comment-box">
                   <div className="comment-box-form">
@@ -783,10 +783,10 @@ const PostDisplayCard = (props) => {
                             src={
                               localStorage.getItem("user_picture") != "null"
                                 ? api.serviceUrl() +
-                                "/" +
-                                localStorage.getItem("user_picture")
+                                  "/" +
+                                  localStorage.getItem("user_picture")
                                 : api.serviceUrl() +
-                                "/images/mysecrets_avatar_square_image.png"
+                                  "/images/mysecrets_avatar_square_image.png"
                             }
                             className="user-image img-responsive"
                           />
