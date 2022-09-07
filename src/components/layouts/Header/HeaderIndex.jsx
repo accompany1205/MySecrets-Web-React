@@ -380,6 +380,12 @@ const HeaderIndex = (props) => {
                     }
                     alt={configuration.get("configData.site_name")}
                   />{" "}
+                  {(props.profile.data.videocall_notification) > 0 ?
+                  <Badge variant="light" className="badge-notify">{(props.profile.data.videocall_notification)}</Badge>
+                  :
+                  ""
+                }
+                  
                   {t("call_list")}
                 </Link>
 
