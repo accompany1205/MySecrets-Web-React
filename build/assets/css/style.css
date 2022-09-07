@@ -1945,6 +1945,18 @@ button.custom-btn {
   padding: 0.5em 2em!important;
 }
 
+.subscribe-post-btn-sec-post {
+  background-color: white !important;
+  /* color: var(--secondary-color)!important; */
+  /* border: none!important; */
+  border: 4px solid #E683C8!important;
+  border-radius: 1000px!important;
+  font-size: 1em!important;
+  color:#E683C8!important;
+  font-weight: 600!important;
+  padding: 0.5em 2em!important;
+}
+
 .gallery-top-btn-sec .subscribe-post-btn-sec:hover,
 .gallery-top-btn-sec .subscribe-post-btn-sec:focus,
 .gallery-top-btn-sec .subscribe-post-btn-sec:active{

@@ -12,6 +12,7 @@ import { withNamespaces } from "react-i18next";
 const VideoListIndex = (props) => {
 
   const { t } = props;
+  // console.log("*************", props)
 
   useEffect(() => {
     props.dispatch(fetchVideoListsDetailsStart());
@@ -30,9 +31,12 @@ const VideoListIndex = (props) => {
 
   };
 
+  
+
   setInterval(() => {
     setCurrentTime(new Date());
   }, 1000);
+
 
   return (
     <div className="lists">
