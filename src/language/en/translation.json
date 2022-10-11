@@ -350,5 +350,6 @@
   "document_upload": "You can’t subscribe premium accounts or post something until you pass document verification. Face Authentication Required Click here",
   "face_authentication" : "Face Authentication",
   "earnings" : "Earnings",
-  "withdraws" : "Withdraws"
+  "withdraws" : "Withdraws",
+  "upload_error_message" : "*The file being uploaded cannot be greater than 20MB."
 }
