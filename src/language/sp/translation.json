@@ -351,5 +351,6 @@
   "document_upload": "No puede suscribirse a cuentas premium o publicar algo hasta que pase la verificación del documento. Se requiere autenticación facial Haga clic aquí",
   "face_authentication" : "Autenticación facial",
   "earnings" : "Ganancias",
-  "withdraws" : "Retirar"
+  "withdraws" : "Retirar",
+  "upload_error_message" : "*El archivo que se carga no puede tener más de 20 MB."
 }

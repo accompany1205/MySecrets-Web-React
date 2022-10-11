@@ -87,7 +87,7 @@ const UploadMediaModal = (props) => {
                var mb_size = Math.floor(totalBytes/1000000);  
              // alert(mb_size);
             }
-            if(mb_size >= 2){
+            if(mb_size >= 20){
               setBtn(false);
 
  
@@ -117,7 +117,7 @@ const UploadMediaModal = (props) => {
           <Form onSubmit={handleSubmit}>
             <Modal.Header closeButton>
               <Modal.Title>{t("upload_media")}</Modal.Title>
-             {/* {btn? '' : <span className="upload-alert-msg">*File size lessthan 2MB only allowed</span>}  */}
+             {btn? '' : <span className="upload-alert-msg">{t("upload_error_message")}</span>} 
             </Modal.Header>
             <Modal.Body>
               <FormControl
@@ -164,7 +164,7 @@ const UploadMediaModal = (props) => {
               >
                 {t("cancel")}
               </Button>
-              {/* {btn ? */}
+              {btn ?
               <Button
                 type="button"
                 className="btn btn-success"
@@ -173,12 +173,13 @@ const UploadMediaModal = (props) => {
               >
                 {t("send")}
               </Button>
-              {/* : ''} */}
+               : ''} 
             </Modal.Footer>
           </Form>
         ) : null}
       </Modal>
     </>
+    
   );
 };
 
