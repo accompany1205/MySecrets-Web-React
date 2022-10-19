@@ -81,7 +81,7 @@ const ChatUserList = (props) => {
                       </div>
                       <div className="chat-time">
                         <span title={chatUser.time_formatted}>
-                          joined at: {moment(chatUser.time_formatted).fromNow()}
+                          {/* joined at: {moment(chatUser.time_formatted).fromNow()} */}
                         </span>
                       </div>
                     </div>
