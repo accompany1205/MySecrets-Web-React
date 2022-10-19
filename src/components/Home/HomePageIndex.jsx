@@ -21,6 +21,7 @@ import VerifiedBadgeNoShadow from "../Handlers/VerifiedBadgeNoShadow";
 import { withNamespaces } from "react-i18next";
 import api from "../../Environment";
 import UsersMapView from "./UsersMapView";
+// import '@fortawesome/fontawesome-free/css/all.min.css';
 
 const HomePageIndex = (props) => {
 
@@ -110,7 +111,12 @@ const HomePageIndex = (props) => {
                   onChange={handleSearch}
                 />
                 <Link className="search-btn" to="#">
-                  <i className="fas fa-search"></i>
+                  <Image
+                        src="/assets/images/icons/search.svg"
+                        className="svg-clone"
+                        style={{height:"20px", width:"20px"}}
+                        width="12"
+                  />
                 </Link>
               </Form>
             </div>
