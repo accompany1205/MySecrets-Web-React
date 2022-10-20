@@ -117,8 +117,12 @@ const UploadMediaModal = (props) => {
           <Form onSubmit={handleSubmit}>
             <Modal.Header closeButton>
               <Modal.Title>{t("upload_media")}</Modal.Title>
-             {btn? '' : <span className="upload-alert-msg">{t("upload_error_message")}</span>} 
+              
+              
             </Modal.Header>
+            <span style={{padding:"10px"}}>Only .MP4 video file format is supported for iphone</span>
+            <br></br>
+            {btn? '' : <span className="upload-alert-msg">{t("upload_error_message")}</span>}
             <Modal.Body>
               <FormControl
                 id="fileupload_photo"
