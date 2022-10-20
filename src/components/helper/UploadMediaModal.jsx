@@ -112,7 +112,7 @@ const UploadMediaModal = (props) => {
         centered
         show={props.uploadMediaModal}
         onHide={props.closeUploadMediaModal}
-      >
+      > 
         {props.uploadMediaModal === true ? (
           <Form onSubmit={handleSubmit}>
             <Modal.Header closeButton>
