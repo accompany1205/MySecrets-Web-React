@@ -120,7 +120,7 @@ const UploadMediaModal = (props) => {
               
               
             </Modal.Header>
-            <span style={{padding:"10px"}}>Only .MP4 video file format is supported for iphone</span>
+            <span style={{padding:"10px"}}>{t("upload_video_format")}</span>
             <br></br>
             {btn? '' : <span className="upload-alert-msg">{t("upload_error_message")}</span>}
             <Modal.Body>
@@ -128,7 +128,7 @@ const UploadMediaModal = (props) => {
                 id="fileupload_photo"
                 type="file"
                 multiple="multiple"
-                accept=".gif,.jpg,.jpeg,.gif,.png,.jpg,.jpeg,.png,.mp4,.mov,.moov,.m4v,.mpg,.mpeg,.wmv,.avi,.webm,.mkv,.stream,.mp3,.wav,.ogg"
+                accept=".gif,.jpg,.jpeg,.gif,.png,.jpg,.jpeg,.png,.mp4,.moov,.m4v,.mpg,.mpeg,.wmv,.avi,.webm,.mkv,.stream,.mp3,.wav,.ogg"
                 onChange={(event) => handleMedia(event)}
               />
               <label
