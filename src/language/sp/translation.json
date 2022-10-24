@@ -352,5 +352,6 @@
   "face_authentication" : "Autenticación facial",
   "earnings" : "Ganancias",
   "withdraws" : "Retirar",
-  "upload_error_message" : "*El archivo que se carga no puede tener más de 20 MB."
+  "upload_error_message" : "*El archivo que se carga no puede tener más de 20 MB.",
+  "upload_video_format" : "Solo se admite el formato de archivo de video .MP4 para iphone"
 }

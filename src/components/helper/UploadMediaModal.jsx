@@ -117,14 +117,18 @@ const UploadMediaModal = (props) => {
           <Form onSubmit={handleSubmit}>
             <Modal.Header closeButton>
               <Modal.Title>{t("upload_media")}</Modal.Title>
-             {btn? '' : <span className="upload-alert-msg">{t("upload_error_message")}</span>} 
+              
+              
             </Modal.Header>
+            <span style={{padding:"10px"}}>{t("upload_video_format")}</span>
+            <br></br>
+            {btn? '' : <span className="upload-alert-msg">{t("upload_error_message")}</span>}
             <Modal.Body>
               <FormControl
                 id="fileupload_photo"
                 type="file"
                 multiple="multiple"
-                accept=".gif,.jpg,.jpeg,.gif,.png,.jpg,.jpeg,.png,.mp4,.mov,.moov,.m4v,.mpg,.mpeg,.wmv,.avi,.webm,.mkv,.stream,.mp3,.wav,.ogg"
+                accept=".gif,.jpg,.jpeg,.gif,.png,.jpg,.jpeg,.png,.mp4,.moov,.m4v,.mpg,.mpeg,.wmv,.avi,.webm,.mkv,.stream,.mp3,.wav,.ogg"
                 onChange={(event) => handleMedia(event)}
               />
               <label

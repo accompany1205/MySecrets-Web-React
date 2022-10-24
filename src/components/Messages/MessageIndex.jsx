@@ -657,18 +657,16 @@ const MessageIndex = (props) => {
                                           height="100%"
                                           className="post-video-size"
                                           playing='play'
-                                        />) : (<video className="post-video-size" autoPlay loop muted playsInline>
-                                          <source src={((chatMessage.from_user) ? (api.serviceUrl() + '/' + chatMessage.message) : chatMessage.file)}></source>
-                                        </video>))
-                                      }
-                                    </div>
-                                    {/* <ReactPlayer
+                                        />) : (<ReactPlayer
                                           light={(api.serviceUrl() + '/' + chatMessage.thumbnail)}
                                           url={((chatMessage.from_user) ? (api.serviceUrl() + '/' + chatMessage.message) : chatMessage.file)}
                                           controls={true}
                                           className="post-video-size"
                                           playing='play'
-                                        /> */}
+                                        />))
+                                      }
+                                    </div>
+                                    
                                     <div className="chat-details">
                                       <span className="chat-message-localization font-size-small">
                                         {chatMessage.created}
@@ -696,18 +694,16 @@ const MessageIndex = (props) => {
                                           height="100%"
                                           className="post-video-size"
                                           playing='play'
-                                        />) : (<video className="post-video-size" autoPlay loop muted playsInline>
-                                        <source src={((chatMessage.from_user) ? (api.serviceUrl() + '/' + chatMessage.message) : chatMessage.file)}></source>
-                                      </video>))
-                                      }
-                                    </div>
-                                    {/* <ReactPlayer
-                                          // light={(api.serviceUrl() + '/' + chatMessage.thumbnail)}
+                                        />) : (<ReactPlayer
+                                          light={(api.serviceUrl() + '/' + chatMessage.thumbnail)}
                                           url={((chatMessage.from_user) ? (api.serviceUrl() + '/' + chatMessage.message) : chatMessage.file)}
                                           controls={true}
                                           className="post-video-size"
                                           playing='play'
-                                        /> */}
+                                        />))
+                                      }
+                                    </div>
+                                    
                                     <div className="chat-details">
                                       <span className="chat-message-localization font-size-small">
                                         {chatMessage.created}

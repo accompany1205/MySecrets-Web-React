@@ -351,5 +351,6 @@
   "face_authentication" : "Face Authentication",
   "earnings" : "Earnings",
   "withdraws" : "Withdraws",
-  "upload_error_message" : "*The file being uploaded cannot be greater than 20MB."
+  "upload_error_message" : "*The file being uploaded cannot be greater than 20MB.",
+  "upload_video_format" : "Only .MP4 video file format is supported for iphone"
 }
