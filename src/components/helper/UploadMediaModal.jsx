@@ -128,6 +128,7 @@ const UploadMediaModal = (props) => {
                 id="fileupload_photo"
                 type="file"
                 multiple="multiple"
+                // upload file type
                 accept=".gif,.jpg,.jpeg,.gif,.png,.jpg,.jpeg,.png,.mp4,.moov,.m4v,.mpg,.mpeg,.wmv,.avi,.webm,.mkv,.stream,.mp3,.wav,.ogg"
                 onChange={(event) => handleMedia(event)}
               />
